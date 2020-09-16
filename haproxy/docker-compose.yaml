@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  
+  haproxy:
+    build: .
+    container_name: haproxy
+    image: haproxy:latest
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - owned
+
+networks:
+  owned:
+    external: true
